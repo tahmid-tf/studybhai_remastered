@@ -21,6 +21,7 @@ nav,
   margin-left: 3rem;
   width: 28rem;
   border-radius: 20px;
+  visibility: hidden;
 }
 
 .nav-link {
@@ -31,6 +32,10 @@ nav,
   width: 51%;
 }
 
+
+
+
+
 /* ------------------------------------------------------- second section ------------------------------------------------------- */
 
 .second-image-section {
@@ -40,7 +45,7 @@ nav,
 
 .second_left_section_heading {
   color: #000;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -58,7 +63,7 @@ nav,
 
 .second-section-div,
 .third-section-div {
-  padding: 34px;
+  padding: 0 112px;
 }
 
 .start-learning-button {
@@ -117,7 +122,7 @@ nav,
 }
 
 .third-section-margin {
-  margin: 0 74px;
+  margin: 0 151px;
 }
 
 .third-section-title_p {
@@ -130,7 +135,7 @@ nav,
 }
 
 .third-section-title {
-  padding-top: 10rem;
+  padding-top: 3rem;
 }
 
 /* ------------------------------------------------------- third section ------------------------------------------------------- */
@@ -225,8 +230,45 @@ nav,
 
 /* ------------------------------------------------------- fifth section ------------------------------------------------------- */
 
+/* ------------------------------------------------------- seventh section ------------------------------------------------------- */
+
+.seventh-section-div {
+  background-color: #004a3e;
+  padding: 5rem;
+  margin-top: 7rem;
+}
+
+.footer-paragraph-state {
+  color: #fff;
+  font-family: Ubuntu;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+ul.footer-lists li {
+  list-style: none;
+  color: white;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 35px;
+}
+
+.footer-list-section-margin {
+  margin-top: 73px;
+}
+
+/* ------------------------------------------------------- seventh section ------------------------------------------------------- */
+
 /* ------------------------------------------------------- media screen for mobile devices ------------------------------------- */
 @media only screen and (max-width: 600px) {
+  .second-section-div,
+  .third-section-div {
+    padding: 10px;
+  }
+
   .input-box {
     margin-left: 0rem;
     width: auto;
@@ -252,6 +294,18 @@ nav,
 
   .third-section-margin {
     margin: 0 20px;
+  }
+
+  /* ---------------------------- thrid section ---------------------------- */
+  /* ---------------------------- seventth section ---------------------------- */
+
+  .seventh-section-div {
+    background-color: #004a3e;
+    padding: 2rem;
+  }
+
+  .footer-list-section-margin {
+    margin-top: 40px;
   }
 
   /* ---------------------------- thrid section ---------------------------- */
