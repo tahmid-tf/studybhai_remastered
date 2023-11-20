@@ -652,11 +652,49 @@ ul.footer-lists li {
 
 /* ------------------------------------------------------- seventh section ------------------------------------------------------- */
 
+/* ------------------------------------------------------- course section ------------------------------------------------------- */
+
+.course-seection-div {
+  padding: 0 112px;
+  text-align: justify;
+  /* font-weight: bold; */
+}
+
+.course-fee-design {
+  background-color: #f0f3f3;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.enroll-btn-design {
+  border-radius: 50px;
+  background: #19e02d;
+  width: 164px;
+  height: 40px;
+  border: none;
+}
+
+.view_learning_anchor {
+  text-decoration: none;
+  color: white;
+}
+
+/* ------------------------------------------------------- course section ------------------------------------------------------- */
+
 /* ------------------------------------------------------- media screen for mobile devices ------------------------------------- */
 @media only screen and (max-width: 600px) {
+  .course-seection-div {
+    padding: 0 50px;
+    text-align: justify;
+  }
+
   .second-section-div,
   .third-section-div {
     padding: 10px;
+  }
+
+  .course-fee-design {
+    padding: 30px;
   }
 
   .input-box {
@@ -687,6 +725,7 @@ ul.footer-lists li {
   }
 
   /* ---------------------------- thrid section ---------------------------- */
+
   /* ---------------------------- seventth section ---------------------------- */
 
   .seventh-section-div {
@@ -702,3 +741,13 @@ ul.footer-lists li {
 }
 
 /* --------------------------------------------------------------------------------------  end - media screen for mobile devices */
+
+/* ------------------------------------------------------- media screen for mobile devices ------------------------------------- */
+
+@media (min-width: 1920px) and (max-width: 2560px) {
+  .course-fee-design {
+    padding: 45px;
+  }
+}
+
+/* ------------------------------------------------------- media screen for mobile devices ------------------------------------- */
