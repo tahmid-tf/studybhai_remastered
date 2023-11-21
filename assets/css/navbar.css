@@ -583,6 +583,7 @@ input[name="testimonial"]:nth-child(4):checked
 .courses-paddng {
   padding: 17px 24px;
   background: #eee;
+  border-radius: 0 0 15px 15px;
 }
 
 .total-students {
@@ -685,6 +686,10 @@ ul.footer-lists li {
 .view_learning_anchor:hover {
   /* text-decoration: none; */
   color: white;
+}
+
+.course-index-image {
+  border-radius: 15px 15px 0 0;
 }
 
 /* ------------------------------------------------------- course section ------------------------------------------------------- */
