@@ -655,15 +655,18 @@ ul.footer-lists li {
 /* ------------------------------------------------------- course section ------------------------------------------------------- */
 
 .course-seection-div {
-  padding: 0 112px;
+  padding: 0 214px;
   text-align: justify;
   /* font-weight: bold; */
 }
 
 .course-fee-design {
   background-color: #f0f3f3;
+  width: 68%;
   padding: 10px;
   border-radius: 20px;
+  display: block;
+  margin-right: auto;
 }
 
 .enroll-btn-design {
@@ -676,6 +679,11 @@ ul.footer-lists li {
 
 .view_learning_anchor {
   text-decoration: none;
+  color: white;
+}
+
+.view_learning_anchor:hover {
+  /* text-decoration: none; */
   color: white;
 }
 
@@ -695,6 +703,7 @@ ul.footer-lists li {
 
   .course-fee-design {
     padding: 30px;
+    width: 100%;
   }
 
   .input-box {
