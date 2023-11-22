@@ -31,8 +31,8 @@
         @foreach($courses as $course)
             <tr>
                 <td>{{ $id += 1 }}</td>
-                <td>{!! $course->title !!}</td>
-                <td>{{ $about->duration }}</td>
+                <td>{!!$course->title !!}</td>
+                <td>{{ $course->duration }}</td>
                 <td><img src="{{ asset('storage/'.$course->image) }}" alt="" style="width: 100px"></td>
                 <td><a href="{{ route('course.edit',$course->id) }}" class="btn btn-info">Update</a></td>
                 <td>
