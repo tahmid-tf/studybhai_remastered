@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\admin\Course;
+use App\Models\admin\Feedback;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -52,4 +53,15 @@ class User extends Authenticatable
     }
 
 //    ------------------ course creation ------------------
+
+//    ------------------ Feedbacks ------------------
+
+    public function feedback()
+    {
+        return $this->hasMany(Feedback::class);
+    }
+
+
+//    ------------------ Feedbacks ------------------
+
 }

@@ -254,42 +254,47 @@
         <div class="courses-list-padding">
             <div class="row" style="margin: 0; padding: 0">
                 <div class="col"></div>
+
+
+
+                @foreach($courses as $course)
+
                 <div class="col-md-3">
                     <div>
                         <div class="card cards-border" style="width: auto">
                             <img
                                 class="card-img-top course-index-image"
-                                src="{{ asset('assets/images/course.png') }}"
+                                src="{{ asset('storage/'.$course->image) }}"
                                 alt="Card image cap"
                             />
                             <div class="card-body courses-paddng">
                                 <div class="card-flex-direction">
                                     <div>
-                                        <p class="total-students">187 Students</p>
+
                                     </div>
                                     <div>
-                                        <p class="total-students">3 Months</p>
+                                        <p class="total-students">{{ $course->duration }}</p>
                                     </div>
                                 </div>
                                 <div class="course-name">
                                     <p class="course-title">
-                                        Machine Learning - Zero to Advance Training Course
+                                        {{ $course->title }}
                                     </p>
                                 </div>
 
                                 <div class="">
-                                    <p class="course-fee">Course Fee : 3000</p>
+                                    <p class="course-fee">Course Fee : {{ $course->price }} /-</p>
                                 </div>
 
                                 <br/>
                                 <div class="card-flex-direction">
+{{--                                    <div>--}}
+{{--                                        <p class="total-students" style="font-weight: bold">--}}
+{{--                                            Daniel Scott--}}
+{{--                                        </p>--}}
+{{--                                    </div>--}}
                                     <div>
-                                        <p class="total-students" style="font-weight: bold">
-                                            Daniel Scott
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <a href="./course1.html" class="view_learning_anchor">
+                                        <a href="{{ route('single_course_info', $course->id) }}" class="view_learning_anchor">
                                             <button class="view-learning-button">View</button>
                                         </a>
                                     </div>
@@ -299,48 +304,8 @@
                     </div>
                 </div>
 
-                <div class="col-md-3">
-                    <div>
-                        <div class="card cards-border" style="width: auto">
-                            <img
-                                class="card-img-top course-index-image"
-                                src="{{ asset('assets/images/course.png') }}"
-                                alt="Card image cap"
-                            />
-                            <div class="card-body courses-paddng">
-                                <div class="card-flex-direction">
-                                    <div>
-                                        <p class="total-students">187 Students</p>
-                                    </div>
-                                    <div>
-                                        <p class="total-students">3 Months</p>
-                                    </div>
-                                </div>
-                                <div class="course-name">
-                                    <p class="course-title">
-                                        Machine Learning - Zero to Advance Training Course
-                                    </p>
-                                </div>
+                @endforeach
 
-                                <div class="">
-                                    <p class="course-fee">Course Fee : 3000</p>
-                                </div>
-
-                                <br/>
-                                <div class="card-flex-direction">
-                                    <div>
-                                        <p class="total-students" style="font-weight: bold">
-                                            Daniel Scott
-                                        </p>
-                                    </div>
-                                    <a href="./course2.html" class="view_learning_anchor">
-                                        <button class="view-learning-button">View</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="col"></div>
             </div>
         </div>

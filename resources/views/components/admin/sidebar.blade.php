@@ -22,3 +22,23 @@
 </li>
 
 {{-- --------------------------------------------- Course --------------------------------------------- --}}
+
+{{-- --------------------------------------------- Feedback --------------------------------------------- --}}
+
+<!-- Nav Item - Pages Collapse Menu -->
+<li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Feedback"
+       aria-expanded="true" aria-controls="Feedback">
+        <i class="fas fa-fw fa-cog"></i>
+        <span>Feedbacks</span>
+    </a>
+    <div id="Feedback" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Components:</h6>
+            <a class="collapse-item" href="{{ route('feedback.create') }}">Create Feedback</a>
+            <a class="collapse-item" href="{{ route('feedback.index') }}">View Feedbacks</a>
+        </div>
+    </div>
+</li>
+
+{{-- --------------------------------------------- Feedback --------------------------------------------- --}}

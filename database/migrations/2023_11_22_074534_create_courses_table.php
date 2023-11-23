@@ -16,7 +16,7 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string("title");
-            $table->string("description");
+            $table->text("description");
             $table->string("image");
             $table->string("duration")->nullable();
             $table->string("price")->nullable();
@@ -24,9 +24,9 @@ class CreateCoursesTable extends Migration
             $table->string("timeline")->nullable();
             $table->string("class_starts")->nullable();
             $table->string("admission_ends")->nullable();
-            $table->string("foundation")->nullable();
-            $table->string("intermediate")->nullable();
-            $table->string("advanced")->nullable();
+            $table->text("foundation")->nullable();
+            $table->text("intermediate")->nullable();
+            $table->text("advanced")->nullable();
             $table->string("availability")->nullable();
             $table->string("user_id");
             $table->timestamps();
