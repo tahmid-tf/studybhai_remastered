@@ -256,53 +256,53 @@
                 <div class="col"></div>
 
 
-
                 @foreach($courses as $course)
 
-                <div class="col-md-3">
-                    <div>
-                        <div class="card cards-border" style="width: auto">
-                            <img
-                                class="card-img-top course-index-image"
-                                src="{{ asset('storage/'.$course->image) }}"
-                                alt="Card image cap"
-                            />
-                            <div class="card-body courses-paddng">
-                                <div class="card-flex-direction">
-                                    <div>
+                    <div class="col-md-3">
+                        <div>
+                            <div class="card cards-border" style="width: auto">
+                                <img
+                                    class="card-img-top course-index-image"
+                                    src="{{ asset('storage/'.$course->image) }}"
+                                    alt="Card image cap"
+                                />
+                                <div class="card-body courses-paddng">
+                                    <div class="card-flex-direction">
+                                        <div>
 
+                                        </div>
+                                        <div>
+                                            <p class="total-students">{{ $course->duration }}</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p class="total-students">{{ $course->duration }}</p>
+                                    <div class="course-name">
+                                        <p class="course-title">
+                                            {{ $course->title }}
+                                        </p>
                                     </div>
-                                </div>
-                                <div class="course-name">
-                                    <p class="course-title">
-                                        {{ $course->title }}
-                                    </p>
-                                </div>
 
-                                <div class="">
-                                    <p class="course-fee">Course Fee : {{ $course->price }} /-</p>
-                                </div>
+                                    <div class="">
+                                        <p class="course-fee">Course Fee : {{ $course->price }} /-</p>
+                                    </div>
 
-                                <br/>
-                                <div class="card-flex-direction">
-{{--                                    <div>--}}
-{{--                                        <p class="total-students" style="font-weight: bold">--}}
-{{--                                            Daniel Scott--}}
-{{--                                        </p>--}}
-{{--                                    </div>--}}
-                                    <div>
-                                        <a href="{{ route('single_course_info', $course->id) }}" class="view_learning_anchor">
-                                            <button class="view-learning-button">View</button>
-                                        </a>
+                                    <br/>
+                                    <div class="card-flex-direction">
+                                        {{--                                    <div>--}}
+                                        {{--                                        <p class="total-students" style="font-weight: bold">--}}
+                                        {{--                                            Daniel Scott--}}
+                                        {{--                                        </p>--}}
+                                        {{--                                    </div>--}}
+                                        <div>
+                                            <a href="{{ route('single_course_info', $course->id) }}"
+                                               class="view_learning_anchor">
+                                                <button class="view-learning-button">View</button>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
                 @endforeach
 
@@ -327,75 +327,75 @@
     <div>
         <div class="main">
             <div class="testimonials">
-                <input
-                    type="radio"
-                    name="testimonial"
-                    id="input-testimonial1"
-                    checked
-                />
-                <input type="radio" name="testimonial" id="input-testimonial2"/>
-                <input type="radio" name="testimonial" id="input-testimonial3"/>
-                <input type="radio" name="testimonial" id="input-testimonial4"/>
-                <div class="testimonials-inner">
-                    <div class="testimonial">
-                        <div class="testimonial-photo">
-                            <div class="photo-background"></div>
-                            <div class="photo-author"></div>
-                        </div>
-                        <div class="testimonial-text">
-                            <p>
-                                Wait a second... you're telling me this testimonials slider
-                                is powered solely by CSS? That's some next-level web
-                                wizardry! I'm sold! Give me that mind-blowing slider to my
-                                website!
-                            </p>
-                        </div>
-                        <div class="testimonial-author">Henry Schwengle</div>
-                    </div>
 
-                    <div class="testimonial">
-                        <div class="testimonial-photo">
-                            <div class="photo-background"></div>
-                            <div class="photo-author"></div>
+
+{{--                <input type="radio" name="testimonial" id="input-testimonial1" checked/>--}}
+{{--                <input type="radio" name="testimonial" id="input-testimonial2"/>--}}
+{{--                <input type="radio" name="testimonial" id="input-testimonial3"/>--}}
+{{--                <input type="radio" name="testimonial" id="input-testimonial4"/>--}}
+
+                <?php $id = 0 ?>
+                @foreach($feedbacks as $feedback)
+                        <?php $id += 1 ?>
+                    <input type="radio" name="testimonial" id="input-testimonial{{ $id }}" {{ $id == 1 ? 'checked' : '' }} />
+                @endforeach
+
+                <div class="testimonials-inner">
+
+                    @foreach($feedbacks as $feedback)
+                        <div class="testimonial">
+                            <div class="testimonial-photo">
+                                <div class="photo-background"></div>
+                                <div class="photo-author" style="background-image: url({{ asset('storage/'.$feedback->image) }})"></div>
+                            </div>
+                            <div class="testimonial-text">
+                                <p>
+                                    {{ $feedback->description }}
+                                </p>
+                            </div>
+                            <div class="testimonial-author">{{ $feedback->title }}</div>
                         </div>
-                        <div class="testimonial-text">
-                            <p>
-                                Turning on your lights and sirens after losing a drag race
-                                is just poor sportsmanship, man.
-                            </p>
-                        </div>
-                        <div class="testimonial-author">John "Vroom" Cena</div>
-                    </div>
+                    @endforeach
+
                 </div>
                 <div class="testimonials-arrows">
                     <div class="arrow arrow-left">
-                        <label for="input-testimonial1"></label>
-                        <label for="input-testimonial2"></label>
+                        <?php $id1 = 0 ?>
+                        @foreach($feedbacks as $feedback)
+                                <?php $id1 += 1 ?>
+                            <label for="input-testimonial{{ $id1 }}"></label>
+                        @endforeach
 
                         <span></span>
                     </div>
                     <div class="arrow arrow-right">
-                        <label for="input-testimonial1"></label>
-                        <label for="input-testimonial2"></label>
+                        <?php $id2 = 0 ?>
+                        @foreach($feedbacks as $feedback)
+                                <?php $id2 += 1 ?>
+                            <label for="input-testimonial{{ $id2 }}"></label>
+                        @endforeach
+
 
                         <span></span>
                     </div>
                 </div>
                 <div class="testimonials-bullets">
-                    <label for="input-testimonial1">
-                        <div class="bullet">
-                            <div>
-                                <span></span>
+
+                    <?php $id3 = 0 ?>
+                    @foreach($feedbacks as $feedback)
+                            <?php $id3 += 1 ?>
+
+                        <label for="input-testimonial{{ $id3 }}">
+                            <div class="bullet">
+                                <div>
+                                    <span></span>
+                                </div>
                             </div>
-                        </div>
-                    </label>
-                    <label for="input-testimonial2">
-                        <div class="bullet">
-                            <div>
-                                <span></span>
-                            </div>
-                        </div>
-                    </label>
+                        </label>
+                    @endforeach
+
+
+
                 </div>
             </div>
         </div>

@@ -64,4 +64,14 @@ class User extends Authenticatable
 
 //    ------------------ Feedbacks ------------------
 
+//    ------------------ Feedbacks ------------------
+
+public function team()
+{
+    return $this->hasMany(Team::class);
+}
+
+
+//    ------------------ Feedbacks ------------------
+
 }
