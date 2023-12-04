@@ -74,4 +74,14 @@ public function team()
 
 //    ------------------ Feedbacks ------------------
 
+//    ------------------ Footer ------------------
+
+public function footer()
+{
+    return $this->hasMany(Footer::class);
+}
+
+
+//    ------------------ Footer ------------------
+
 }

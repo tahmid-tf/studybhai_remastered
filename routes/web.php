@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\FooterController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\TeamController;
+use App\Models\Footer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +53,12 @@ Route::middleware(['auth', 'admin'])
         Route::resource('team', TeamController::class);
 
         // ------------------------------------------ Team ------------------------------------------
+
+            // ------------------------------------------ Footer ------------------------------------------
+
+            Route::resource('footer', FooterController::class);
+
+            // ------------------------------------------ Footer ------------------------------------------
     });
 
 // ----------------------------------------------------------------------- Admin -----------------------------------------------------------------------
@@ -58,6 +66,12 @@ Route::middleware(['auth', 'admin'])
 // ----------------------------------------------------------------------- User [ public route ] -------------------------------------------------------
 
 Route::get('course-info/{id}', [FrontController::class, 'course_info'])->name('single_course_info');
+
+// ------------------------------------------ Team ------------------------------------------
+
+Route::get('team', [FrontController::class, 'team'])->name('team_info');
+
+// ------------------------------------------ Team ------------------------------------------
 
 // ----------------------------------------------------------------------- User [ public route ] -------------------------------------------------------
 

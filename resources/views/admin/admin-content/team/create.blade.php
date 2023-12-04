@@ -29,7 +29,7 @@
 
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="image">Image</label>
+                    <label for="image">Image [130px x 130px]</label>
                     <input type="file" id="formFile" name="image"
                         class="form-control-file @error('image') is-invalid @enderror">
 

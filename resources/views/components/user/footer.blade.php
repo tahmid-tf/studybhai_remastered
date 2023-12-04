@@ -3,32 +3,27 @@
         <div class="row" style="margin: 0; padding: 0">
             <div class="col-md-3">
                 <div>
-                    <img src="{{ asset('assets/images/logo.png') }}" alt="" class="img-fluid"/>
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="" class="img-fluid" />
                 </div>
-                <br/>
+                <br />
                 <div>
                     <p class="footer-paragraph-state">
                         Online live skill development platform
                     </p>
                 </div>
-                <br/>
+                <br />
                 <div>
-                    <img
-                        src="{{ asset('assets/images/footer_state.png') }}"
-                        alt=""
-                        class="img-fluid"
-                    />
+                    <img src="{{ asset('assets/images/footer_state.png') }}" alt="" class="img-fluid" />
                 </div>
             </div>
 
             <div class="col-md-3">
                 <div class="footer-list-section-margin">
                     <ul class="footer-lists">
-                        <li>Contact</li>
-                        <li>Phone</li>
-                        <li>Email</li>
+                        <li>Phone : {{ \App\Models\Footer::first()->phone ?? '' }}</li>
+                        <li>Email : {{ \App\Models\Footer::first()->email ?? '' }}</li>
                         <li>
-                            Location : 88, Road No: 7, Monshurabad, Dhaka, Bangladesh
+                            Location : {{ \App\Models\Footer::first()->location ?? '' }}
                         </li>
                     </ul>
                 </div>
@@ -45,15 +40,26 @@
                 </div>
             </div>
 
+            @php
+                $categoryNames = [
+                    'team' => 'Team',
+                    'advisor' => 'Advisor',
+                    'trainer' => 'Trainer',
+                    'special_trainer' => 'Special Trainer',
+                    'guest_trainer' => 'Guest Trainer',
+                    'alumni' => 'Alumni',
+                ];
+            @endphp
+
             <div class="col-md-3">
                 <div class="footer-list-section-margin">
                     <ul class="footer-lists">
-                        <li>Teams</li>
-                        <li>Advisor</li>
-                        <li>Trainer</li>
-                        <li>Special Trainer</li>
-                        <li>Guest Trainer</li>
-                        <li>Alumni</li>
+                        <li><a href="{{ route('team_info') }}" style="text-decoration: none; color: white">{{ $categoryNames['team'] }}</a></li>
+                        <li><a href="{{ route('team_info') }}" style="text-decoration: none; color: white">{{ $categoryNames['advisor'] }}</a></li>
+                        <li><a href="{{ route('team_info') }}" style="text-decoration: none; color: white">{{ $categoryNames['trainer'] }}</a></li>
+                        <li><a href="{{ route('team_info') }}" style="text-decoration: none; color: white">{{ $categoryNames['special_trainer'] }}</a></li>
+                        <li><a href="{{ route('team_info') }}" style="text-decoration: none; color: white">{{ $categoryNames['guest_trainer'] }}</a></li>
+                        <li><a href="{{ route('team_info') }}" style="text-decoration: none; color: white">{{ $categoryNames['alumni'] }}</a></li>
                     </ul>
                 </div>
             </div>
